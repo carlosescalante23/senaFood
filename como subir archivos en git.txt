@@ -1,0 +1,21 @@
+
+
+
+
+como borrar una cuenta de git desde consola:
+
+Presiona Win + R, escribe control keymgr.dll y dale Enter.
+busca "Administrador de credenciales"
+Ve a Credenciales de Windows.
+Busca las que digan git:https://github.com o github.com.
+Elimínalas.
+
+pasos para subir un proyecto.
+
+---1 git clone https://github.com/carlosescalante23/senaFood.git   <----------- la ruta lo sacamos del git
+---2 en la carpeta donde está lo que quieres subir le damos: C:\xampp\htdocs\senaFood> git status     ---> le dara como resultado la rama : On branch main
+Your branch is up to date with 'origin/main'.
+---3 git checkout (nombre de la rama)
+---4  git add .
+---5 git commit -m "documentacion"
+---6  git push
