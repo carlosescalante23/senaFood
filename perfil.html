@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfil | SENA FOOD</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="perfil-body">
+  <div class="perfil-container">
+    <h1>👤 Mi Perfil</h1>
+    <p><strong>Nombre:</strong> <span id="userName"></span></p>
+    <p><strong>Correo:</strong> <span id="userEmail"></span></p>
+    <p><strong>Documento:</strong> <span id="userDoc"></span></p>
+
+    <div class="perfil-buttons">
+      <a href="index.html" class="btn">🏠 Ir al inicio</a>
+      <button id="logoutBtn" class="btn btn-danger">🚪 Cerrar sesión</button>
+    </div>
+  </div>
+
+  <script>
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (user && localStorage.getItem("loggedIn") === "true") {
+      document.getElementById("userName").textContent = user.fullname;
+      document.getElementById("userEmail").textContent = user.email;
+      document.getElementById("userDoc").textContent = user.document;
+    } else {
+      alert("⚠️ No hay sesión activa.");
+      window.location.href = "login.html";
+    }
+
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      localStorage.removeItem("loggedIn");
+      alert("👋 Sesión cerrada correctamente.");
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>

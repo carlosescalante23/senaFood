@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SENA FOOD | Página Principal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="main-body">
+  <header class="main-header">
+    <div class="header-top">
+      <span class="location">La ubicación del SENA en Salomia es Cra 2 52#156, Cali, Valle del Cauca</span>
+      <a href="#" class="change-location">Cambiar ubicación</a>
+      <div class="user-info">
+        <span id="userName"></span>
+       <a href="#" class="login-btn" id="logoutBtn">Cerrar Sesion</a>
+        
+      </div>
+    </div>
+    <div class="header-nav">
+      <img src="img/logo.png" alt="Logo SENA FOOD" class="main-logo" />
+      <nav>
+        <a href="#" class="nav-btn">Home</a>
+        <a href="#" class="nav-btn">Menu</a>
+        <a href="#" class="nav-btn">Pedidos</a>
+      </nav>
+      <a href="carrito.html" class="cart-btn">🛒 Detalle de compra</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section animate-fade">
+      <div class="hero-content">
+        <h1>SENA alimenta tu día.</h1>
+        <p>Almuerzos SENA: rápidos, frescos y listos para llevar.</p>
+        <div class="hero-img-space">
+          <!-- Aquí puedes poner la imagen principal del chef -->
+        </div>
+        <div class="hero-cards">
+          <div class="hero-card animate-slide">
+            <span>¡Bienvenido!</span>
+            <span id="userNameCard"></span>
+          </div>
+          <div class="hero-card animate-slide">
+            <span>Pedido aceptado</span>
+            <span>Tu pedido está en preparación</span>
+          </div>
+          <div class="hero-card animate-slide">
+            <span>Almuerzo entregado</span>
+            <span>¡Disfruta tu comida!</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="order-section">
+      <h2>Comienza tu orden</h2>
+      <div class="order-cards">
+        <!-- Espacio para imágenes de platos principales -->
+         <div class="product-card animate-fade">
+  <img src="img/producto1.jpg" alt="Arroz con pollo" class="product-img" />
+  <h3 class="product-title">Arroz con pollo</h3>
+  <p class="product-price">$12.000</p>
+  <button class="btn buy-btn">Comprar</button>
+</div>
+<div class="product-card animate-fade">
+  <img src="img/producto2.jpg" alt="Carne a la BBQ" class="product-img" />
+  <h3 class="product-title">Carne a la BBQ</h3>
+  <p class="product-price">$15.000</p>
+  <button class="btn buy-btn">Comprar</button>
+</div>
+</section>
+
+    <section class="special-section">
+      <h2>Un Especial que se Vive una Sola Vez <span>😋</span></h2>
+      <div class="special-cards">
+        <!-- Espacio para imágenes de platos especiales -->
+      </div>
+    </section>
+
+    <section class="centros-section">
+      <h2>Nuestros Centros de Formación</h2>
+      <div class="centros-cards">
+        <!-- Espacio para imágenes de los centros -->
+      </div>
+    </section>
+
+    <section class="promo-section animate-fade">
+      <div class="promo-content">
+        <img src="img/chef.png" alt="Chef SENA" class="promo-chef" />
+        <div>
+          <h3><span class="senafood">SENA FOOD</span> Es nuestra <span class="family">Familia</span> & algo más</h3>
+          <p>Descarga nuestra aplicación móvil</p>
+          <div class="app-buttons">
+            <a href="#"><img src="img/appstore.png" alt="App Store" /></a>
+            <a href="#"><img src="img/playstore.png" alt="Google Play" /></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <div class="stats-card orange-bg">
+        <span>789,900+ registradas</span>
+      </div>
+      <div class="stats-card orange-bg">
+        <span>690+ personas activas</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <img src="img/logo.png" alt="Logo SENA FOOD" class="footer-logo" />
+      <div class="footer-links">
+        <a href="#">Política de privacidad</a>
+        <a href="#">Términos y condiciones</a>
+        <a href="#">Ayuda & Soporte</a>
+      </div>
+      <div class="footer-social">
+        <!-- Espacio para iconos de redes sociales -->
+      </div>
+      <div class="footer-apps">
+        <a href="#"><img src="img/appstore.png" alt="App Store" /></a>
+        <a href="#"><img src="img/playstore.png" alt="Google Play" /></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© SENA FOOD 2025. All rights reserved.</span>
+    </div>
+  </footer>
+
+</div>
+<!-- Puedes duplicar y cambiar los datos para más productos -->
+  <script>
+    // Mostrar nombre del usuario si está logueado
+  
+  
+  // Mostrar nombre del usuario si está logueado
+  const user = JSON.parse(localStorage.getItem("user"));
+  if (user && user.fullname) {
+    document.getElementById("userName").textContent = "Hola, " + user.fullname;
+    document.getElementById("userNameCard").textContent = user.fullname;
+  }
+
+  // Función para cerrar sesión
+  const logoutBtn = document.getElementById("logoutBtn");
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", function(e) {
+      e.preventDefault();
+      localStorage.removeItem("loggedIn");
+      window.location.href = "login.html";
+    });
+  }
+</script>
+</body>
+</html>
+
